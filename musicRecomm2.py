@@ -20,6 +20,7 @@ class MusicRecommendationSystem(MRJob):
 		user_ratings.append(user_id)
 		user_ratings.append(float(rating))
 		yield track_id,user_ratings
+		#Change in Branch new Spike
 	def reducer_group_user_rating(self,track_id,user_ratings):
 		UserRatingList = []
 		for ur in user_ratings:
