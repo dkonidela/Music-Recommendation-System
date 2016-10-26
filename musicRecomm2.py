@@ -1,6 +1,9 @@
 from mrjob.job import MRJob
 
 #Change in Branch new Spike
+# Changes in UT from Dileep Konidela/ Controllers
+# Change in Branch new Spike
+# Changes in UT from Dileep Konidela
 class MusicRecommendationSystem(MRJob):
 	def steps(self):
 	 	return[
@@ -67,6 +70,8 @@ class MusicRecommendationSystem(MRJob):
 			yield combination1[0],(UserList1)
 			yield combination2[0],(UserList2)
 
+
+	# Changes in UT from Dileep Konidela for 2nd
 	def reducer_aggregate(self,user_id,UserList):
 		UserList1=[]
 		SimilarUsers1=[]
@@ -126,6 +131,8 @@ class MusicRecommendationSystem(MRJob):
 		UserList1.append(RecommTracks)
 		yield user_id,(SimilarUsers1,User_sel1,UserFav1,RecommTracks)
 
+
+	#Controllers
 	def mapper_splitter(self,user_id, UserList):
 		UserList1=[]
 
@@ -148,6 +155,8 @@ class MusicRecommendationSystem(MRJob):
 		yield user_id,(UserList)
 
 
+	# Changes in UT from Dileep Konidela/ Controllers
+	# Changes in UT from Dileep Konidela
 	def reducer_aggregate1(self,user_id,UserList):
 		finalList=[]
 		
@@ -194,6 +203,7 @@ class MusicRecommendationSystem(MRJob):
 
 
 
+# Changes in UT from Dileep Konidela
 def combinations(iterable, r):
     pool = tuple(iterable)
     n = len(pool)
@@ -213,6 +223,6 @@ def combinations(iterable, r):
         yield tuple(pool[i] for i in indices)
 
 	
-
+# Changes in Controllers for 2nd time Dileep Konidela / mate controllers
 if __name__ == '__main__':
  	MusicRecommendationSystem.run()
